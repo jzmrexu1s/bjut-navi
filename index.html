@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://cache.amap.com/lbs/static/AMap.WalkingRender1120.css"/>
+    <script src="https://webapi.amap.com/maps?v=1.4.15&key=7c3799b05cac73075ec1ca06c2a6f576&plugin=AMap.PolyEditor"></script>
+    <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.15&key=7c3799b05cac73075ec1ca06c2a6f576&plugin=AMap.Walking"></script>
+    <script type="text/javascript" src="https://cache.amap.com/lbs/static/WalkingRender1230.js"></script>
+    <link rel="stylesheet" href="https://a.amap.com/jsapi_demos/static/demo-center/css/demo-center.css" />
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.15.3/dist/bootstrap-table.min.css"/>
+    <script src="https://a.amap.com/jsapi_demos/static/demo-center/js/demoutils.js"></script>
+    <!-- Title  -->
+    <title>校园导航系统</title>
+
+    <!-- Favicon  -->
+    <link rel="icon" href="img/core-img/favicon.ico">
+
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+<!--                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">-->
+<!--                        &times;-->
+<!--                    </button>-->
+                    <h4 class="modal-title" id="myModalLabel">
+                        订票
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>请输入相关预约信息，将自动发送到对应网站。</label>
+                    </div>
+                    <div class="form-group">
+                        <label>开始日期和时间</label>
+                           <div class="input-group date" id="datetimepicker2" data-target-input="nearest">
+                               <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker2"/>
+                               <div class="input-group-append" data-target="#datetimepicker2" data-toggle="datetimepicker">
+                                   <div class="input-group-text"><i class="fa fa-clock-o"></i></div>
+                               </div>
+                           </div>
+                    </div>
+                    <div class="form-group">
+                        <label>结束日期和时间</label>
+                        <div class="input-group date" id="datetimepicker3" data-target-input="nearest">
+                            <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker3"/>
+                            <div class="input-group-append" data-target="#datetimepicker3" data-toggle="datetimepicker">
+                                <div class="input-group-text"><i class="fa fa-clock-o"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                    </button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">
+                        提交
+                    </button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+
+    <!-- Preloader Start -->
+    <div id="preloader">
+        <div class="preload-content">
+            <div id="sonar-load"></div>
+        </div>
+    </div>
+    <!-- Preloader End -->
+
+    <!-- ***** Hero Area Start ***** -->
+    <div class="hero-area d-flex">
+        <!-- Back End Content -->
+<!--        <div class="backEnd-content">-->
+<!--            <img class="dots" src="img/core-img/dots.png" alt="">-->
+<!--        </div>-->
+
+        <!-- Hero Thumbnail -->
+        <div class="hero-thumbnail aboutUs equalize bg-img" id="abc">
+            <div id="container">
+            </div>
+        </div>
+        
+        <!-- Hero Content -->
+        <div class="hero-content aboutUs equalize">
+            <div class="container-fluid h-50">
+                <div class="row h-50 justify-content-center">
+                    <div class="col-12 col-md-10">
+                        <div class="line"></div>
+                        <h2>BJUTNavi</h2>
+                        <p>点击蓝色标签以选择位置，再次点击以取消。在下方输入开始时间和在每个位置停留的时间。</p>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
+                                        <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker1"/>
+                                        <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
+                                            <div class="input-group-text"><i class="fa fa-clock-o"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Email" id="inputemail">
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <button type="button" class="btn btn-light btn-lg" id="searchbutton">搜索最佳路径</button>
+                        <button type="button" class="btn btn-light btn-lg" id="clearbutton">清除搜索</button>
+                        <button type="button" class="btn btn-light btn-lg" id="sendbutton">发送邮件</button>
+
+
+                        <div class="row">
+                            <div class="col-sm-7">
+                                <button type="button" class="btn btn-light btn-sp" id="allroute">完整路径</button>
+                                <button type="button" class="btn btn-light btn-sp" id="leftroute">上一段</button>
+                                <button type="button" class="btn btn-light btn-sp" id="rightroute">下一段</button>
+                            </div>
+                        </div>
+
+                        <div class="row btn-sp">
+                            <div class="col-sm-4">
+                                <table class="table table-striped table-bordered table-hover" id="tableL01"></table>
+                            </div>
+                            <div class="col-sm-4">
+                                <div id="panel"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery (Necessary for All JavaScript Plugins) -->
+    <script src="js/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="js/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Plugins js -->
+    <script src="js/plugins.js"></script>
+    <!-- Active js -->
+    <script src="js/active.js"></script>
+
+    <script type="text/javascript" src="https://cache.amap.com/lbs/static/addToolbar.js"></script>
+
+
+    <link href="https://cdn.bootcss.com/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/moment.js/2.22.0/moment-with-locales.js"></script>
+    <script src="js/tempusdominus-bootstrap-4.js"></script>
+    <script src="//webapi.amap.com/ui/1.0/main.js?v=1.0.11"></script>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/5.6.3/css/all.css" crossorigin="anonymous">
+    <script src="https://unpkg.com/bootstrap-table@1.15.3/dist/bootstrap-table.min.js"></script>
+
+    <script src="js/map.js"></script>
+</body>
+</html>
