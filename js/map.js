@@ -95,8 +95,55 @@ function search() {
                 t.setTime(t_s + timeSeq[(seq[seq.length - 2] - 1) * display.length + (seq[seq.length - 1] - 1)] * 1000);
                 times[1] = t.clone();
 
+                console.log(times);
+
                 for (var i = 0; i < times.length; i += 1) {
                     times[i] = times[i].toLocaleTimeString();
+                }
+
+                // 如果当前时间不处于吃饭时间 (7-9, 11-13, 17-19)
+                var eat_locations = ["新食堂", "学综楼", "金工楼", "宿舍10号楼", "宿舍11号楼", "材料楼", "数理楼", "第三教学楼",
+                    "第四教学楼", "理科楼", "信息楼", "图书馆",
+                    "生命楼", "环能楼", "美食园", "奥运餐厅",
+                    "软件楼", "经管楼", "科学楼", "城建楼",
+                    "实训楼", "人文楼", "奥林匹克体育馆"];
+                var cannot_go = [];
+                for (var i = 0; i < display.length; i += 1) {
+                    if (eat_locations.indexOf(display[seq[i] - 1]['name']) !== -1) {
+                        var t = parseInt(times[i * 2][0]);
+                        var apm = times[i * 2].slice(8, 9);
+                        if ((apm === "A" && (t < 8)) || (apm === 'P') && (t > 8)) {
+                            cannot_go.push({name:display[seq[i] - 1]['name']});
+                        }
+                    }
+                }
+
+                if (cannot_go.length > 0) {
+                    $('#cannotArrange').modal('show');
+
+                    var tableColumns2 = [
+                        {field: 'name', title: '地点名称'},
+                    ];
+
+                    $('#tableL02').bootstrapTable('destroy');
+                    $('#tableL02').bootstrapTable({
+                        theadClasses: "thead-light",
+                        // rowStyle: rowStyle,
+                        columns: tableColumns2,
+                        data: cannot_go,
+                        // clickEdit: true,
+                        // onClickCell: function(field, value, row, $element) {
+                        //     if (field === 'time') {
+                        //         $element.attr('contenteditable', true);
+                        //         $element.blur(function() {
+                        //             let index = $element.parent().data('index');
+                        //             let tdValue = parseInt($element.html());
+                        //             saveData(index, field, tdValue);
+                        //         })
+                        //     }
+                        // }
+                    });
+
                 }
 
                 for (var i = 0; i < display.length; i += 1) {

@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9f34c1e6-35e5-4b17-be16-03238be777a3" name="Default Changelist" comment="" />
+    <list default="true" id="9f34c1e6-35e5-4b17-be16-03238be777a3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,7 +18,11 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="ProjectId" id="1S0Rvo1DmpXcYRAULChEztBevo3" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -22,6 +30,7 @@
     <option name="showMembers" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -240,6 +249,7 @@
       <workItem from="1576167820660" duration="570000" />
       <workItem from="1576658907003" duration="1957000" />
       <workItem from="1576667561397" duration="245000" />
+      <workItem from="1576671175964" duration="1216000" />
     </task>
     <servers />
   </component>
@@ -275,10 +285,10 @@
     <state width="1878" height="114" key="GridCell.Tab.0.right/0.23.1920.978@0.23.1920.978" timestamp="1576031946907" />
     <state width="1878" height="274" key="GridCell.Tab.0.right/0.23.1920.979@0.23.1920.979" timestamp="1576667475416" />
     <state width="1878" height="224" key="GridCell.Tab.0.right/0.23.1920.982@0.23.1920.982" timestamp="1575782889371" />
-    <state x="598" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1576667561199">
+    <state x="598" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1576671244349">
       <screen x="0" y="23" width="1920" height="979" />
     </state>
-    <state x="598" y="345" key="com.intellij.ide.util.TipDialog/0.23.1920.979@0.23.1920.979" timestamp="1576667561199" />
+    <state x="598" y="345" key="com.intellij.ide.util.TipDialog/0.23.1920.979@0.23.1920.979" timestamp="1576671244349" />
     <state x="598" y="346" key="com.intellij.ide.util.TipDialog/0.23.1920.982@0.23.1920.982" timestamp="1575851659000" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
@@ -286,7 +296,7 @@
     <SUITE FILE_PATH="coverage/tsp$task_1__1_.coverage" NAME="task(1)(1) Coverage Results" MODIFIED="1575975779737" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/tsp$1.coverage" NAME="1 Coverage Results" MODIFIED="1571368507825" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/tsp$tst.coverage" NAME="tst Coverage Results" MODIFIED="1572264497559" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/tsp$app.coverage" NAME="app Coverage Results" MODIFIED="1576658956558" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/tsp$app.coverage" NAME="app Coverage Results" MODIFIED="1576671345599" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/tsp$pictochar.coverage" NAME="pictochar Coverage Results" MODIFIED="1576140619320" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/tsp$data.coverage" NAME="data Coverage Results" MODIFIED="1571186158807" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>

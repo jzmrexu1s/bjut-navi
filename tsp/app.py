@@ -79,7 +79,7 @@ class handleMail(Resource):
             server = smtplib.SMTP_SSL('smtp.qq.com', 465)
             server.login(fromaddr, password)
             server.sendmail(fromaddr, toaddrs, m.as_string())
-            print('success')
+            # print('success')
             server.quit()
         except smtplib.SMTPException as e:
             print('error:', e)
