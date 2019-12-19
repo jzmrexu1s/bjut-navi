@@ -128,20 +128,8 @@ function search() {
                     $('#tableL02').bootstrapTable('destroy');
                     $('#tableL02').bootstrapTable({
                         theadClasses: "thead-light",
-                        // rowStyle: rowStyle,
                         columns: tableColumns2,
                         data: cannot_go,
-                        // clickEdit: true,
-                        // onClickCell: function(field, value, row, $element) {
-                        //     if (field === 'time') {
-                        //         $element.attr('contenteditable', true);
-                        //         $element.blur(function() {
-                        //             let index = $element.parent().data('index');
-                        //             let tdValue = parseInt($element.html());
-                        //             saveData(index, field, tdValue);
-                        //         })
-                        //     }
-                        // }
                     });
 
                 }
@@ -364,12 +352,12 @@ for (var i = 0; i < coordinates.length; i += 1) {
 
 var normalIcon = new AMap.Icon({
     size: new AMap.Size(25, 34),
-    image: "//a.amap.com/jsapi_demos/static/demo-center/icons/poi-marker-default.png",
+    image: "http://a.amap.com/jsapi_demos/static/demo-center/icons/poi-marker-default.png",
 });
 
 var selectedIcon = new AMap.Icon({
     size: new AMap.Size(25, 34),
-    image: "//a.amap.com/jsapi_demos/static/demo-center/icons/poi-marker-red.png",
+    image: "http://a.amap.com/jsapi_demos/static/demo-center/icons/poi-marker-red.png",
 });
 
 

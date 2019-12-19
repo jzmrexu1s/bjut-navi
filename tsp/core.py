@@ -49,7 +49,6 @@ class Solution:
         self.search()
         return self.get_seq()
 
-
 def make_solution(lengths):
     start_spot = 0
     s1 = Solution(lengths, start_spot)

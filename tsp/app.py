@@ -19,10 +19,12 @@ class handleTimeSeq(Resource):
         parser = reqparse.RequestParser()
         parser.add_argument('timeSeq')
         args = parser.parse_args()
-        print(args)
+        # print("最短距离数据：", args)
         ls = [int(l) for l in args['timeSeq'][1:-1].split(',')]
         ls = numpy.array(ls).reshape(int(math.sqrt(len(ls))), int(math.sqrt(len(ls))))
+        print("最短距离数据：", ls)
         s = json.dumps(make_solution(ls))
+        print("路径规划结果：", " -> ".join(map(str, make_solution(ls))))
         return {'seq': s}, 201
 
 
@@ -79,7 +81,6 @@ class handleMail(Resource):
             server = smtplib.SMTP_SSL('smtp.qq.com', 465)
             server.login(fromaddr, password)
             server.sendmail(fromaddr, toaddrs, m.as_string())
-            # print('success')
             server.quit()
         except smtplib.SMTPException as e:
             print('error:', e)
